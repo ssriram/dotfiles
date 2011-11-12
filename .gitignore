@@ -1,0 +1,44 @@
+# C/C++
+*.slo
+*.lo
+*.o
+*.so
+*.lai
+*.la
+*.a
+
+# Python
+*.py[co]
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+pip-log.txt
+.coverage
+.tox
+*.mo
+
+# Node
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+pids
+logs
+results
+
+node_modules
+npm-debug.log
+
