@@ -6,15 +6,12 @@
 	user = ssriram
 	email = naughtysriram@gmail.com
 
-[nodester]
-	name = bizzmagnate
-	email = bizzmagnate@gmail.com
-
 [alias]
 	in = init
 	st = status
 	cl = clone
 	ch = checkout
+        com = commit -m
 	cam = commit -am
 	wat = whatchanged
 	l = log

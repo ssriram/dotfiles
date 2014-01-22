@@ -5,9 +5,9 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-# don't put duplicate lines in the history. See bash(1) for more options
-# ... or force ignoredups and ignorespace
-HISTCONTROL=ignoredups:ignorespace
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -19,6 +19,10 @@ HISTFILESIZE=2000
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
+
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -78,10 +82,9 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls --group-directories-first -Filha'
+alias ll='ls -alF'
 alias la='ls -A'
-alias l='ls -CFar'
-alias dir='ls --group-directories-first -Filh'
+alias l='ls -CF'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -103,20 +106,4 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-
-
-##my touch
-
-PROMPT_COMMAND='history -a'
-export HISTIGNORE="&:ls:[bf]g:exit"
-shopt -s cdspell
-shopt -s cmdhist
-
-alias hitlar='ls -Fhitlar' #the hitlar mode file listing
-export PATH=$HOME/local/node/bin:$HOME/dev/google_appengine:$PATH
-alias cls='clear'
-alias install='sudo apt-get install'
-alias remove='sudo apt-get remove'
-alias "cd.."="cd .."
-alias v='gvim --remote-silent'
-
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
