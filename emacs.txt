@@ -1,0 +1,26 @@
+
+
+exit			C-x C-c
+quit			C-g
+open			C-x C-f
+
+cut/kill		C-k		S-Del
+copy					C-Ins
+paste/yank		C-y		S-Ins
+
+mark			C-space
+cutmark			C-w
+
+save			C-x C-s
+saveall			C-x s
+
+close			C-x 0
+close others		C-x 1
+splith			C-x 2
+splitv			C-x 3
+cycle			C-x o
+
+cycle buffer	C-x arrow
+switch buffer	C-x b
+list buffer		C-x C-b
+kill buffer		C-x k

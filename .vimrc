@@ -4,11 +4,13 @@
 "   Author: ssriram
 "
 
+"
 "   Pathogen
+"
+
 filetype off
-call pathogen#infect()
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+execute pathogen#infect()
+execute pathogen#helptags()
 
 
 "
@@ -16,36 +18,29 @@ call pathogen#runtime_append_all_bundles()
 "   
 
 filetype plugin indent on
-
 syntax enable
 
 set undolevels=1500
 set history=150
 
 if has('gui_running')
-    set background=dark
-    set lines=45 columns=100
+  set lines=30 columns=90
+  set background=dark
+  set guifont=Monospace\ 12
 else
-    set background=dark
-    
-    set t_Co=256
-    let g:solarized_termcolors=256
-
-	"set t_Co=16  "When using tty use t_Co=16
-	"let g:solarized_termcolors=16
+  set t_Co=256
+  set background=dark
 endif
 
-colorscheme solarized
-set guifont=Monospace\ 14
+colorscheme desert
 
 set number
 set ruler
-
 set nowrap
 
-set ts=4
-set sw=4
-set softtabstop=4
+set ts=2
+set sw=2
+set softtabstop=2
 set backspace=indent,eol,start
 set expandtab
 set autoindent
@@ -70,9 +65,9 @@ set showcmd
 set cursorline
 set ttyfast
 
-
-
+"
 "   Textmate characters
+"
 "set list
 "set listchars=tab:▸\ ,eol:¬
 
@@ -81,6 +76,7 @@ set ttyfast
 "   Custom bindings
 "
 
+": = ; during fast typing this comes handy
 nnoremap ; :
 
 let mapleader=","
@@ -89,32 +85,32 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nnoremap <leader><space> :noh<CR>
 nnoremap <leader>v V`]
 
-"  Save file with root permissions 
+" Save file with root permissions 
 cmap w!! w !sudo tee % >/dev/null
 
-"   Search with normal Regex 
+" Search with normal Regex 
 nnoremap / /\v
 vnoremap / /\v
 
-"   F1 is ESC
+" F1 is ESC
 nnoremap <F1> <ESC>
 inoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
-"   TAB is match
+" TAB is match
 nnoremap <tab> %
 vnoremap <tab> %
 
-"   Autosave buffers
-au FocusLost * :wa
+" Autosave buffers
+"au FocusLost * :wa
 
-"   Windowing
+" Windowing
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-"   VIM practise
+" VI practise
 "map <up> <nop>
 "map <down> <nop>
 "map <left> <nop>

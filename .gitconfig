@@ -11,7 +11,7 @@
 	st = status
 	cl = clone
 	ch = checkout
-        com = commit -m
+    com = commit -m
 	cam = commit -am
 	wat = whatchanged
 	l = log
@@ -31,4 +31,3 @@
 	branch = auto
 	status = auto
 	ui = auto
-
