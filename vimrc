@@ -4,14 +4,37 @@
 "   Author: ssriram
 "
 
+"   Powerline
+set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+set laststatus=2
+
+"
+" Vundle
+"
+set nocompatible
+filetype off
+set rtp+=$HOME/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tpope/vim-surround'
+"Plugin 'valloric/youcompleteme'
+Plugin 'honza/vim-snippets'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-fugitive'
+Plugin 'flazz/vim-colorschemes'
+
+call vundle#end()
+
+
 "
 "   Pathogen
 "
-
-filetype off
-execute pathogen#infect()
-execute pathogen#helptags()
-
+"filetype off
+"execute pathogen#infect()
+"execute pathogen#helptags()
 
 "
 "   Settings
@@ -26,7 +49,9 @@ set history=150
 if has('gui_running')
   set lines=30 columns=90
   set background=dark
-  set guifont=Monospace\ 12
+"  set guifont=Monospace\ 12
+  set guifont=Inconsolata\ for\ Powerline\ 12
+  set t_Co=256
 else
   set t_Co=256
   set background=dark
@@ -84,6 +109,14 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nnoremap <leader><space> :noh<CR>
 nnoremap <leader>v V`]
+
+
+" NerdTree
+nnoremap <leader>f :NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+
 
 " Save file with root permissions 
 cmap w!! w !sudo tee % >/dev/null
